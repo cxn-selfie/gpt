@@ -204,7 +204,7 @@ class DataLoaderLite:
         self.B = B
         self.T = T
         
-        with open('/home/lucy/gpt/input.txt', 'r') as f:
+        with open('/home/lucy/user/gpt/input.txt', 'r') as f:
             text = f.read()
 
         tokens = enc.encode(text)
