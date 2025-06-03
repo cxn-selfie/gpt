@@ -48,7 +48,7 @@ void launch_add(const at::Tensor& dA, const at::Tensor& dB, const at::Tensor& dC
 }
 
 
-void matrixMultiply(const at::Tensor& dA, const at::Tensor& dB, const at::Tensor& dC){
+void matrixMultiply(const at::Tensor& dA, const at::Tensor& dB, const at::Tensor& dC){ 
     const auto dA_sizes = dA.sizes();
     const auto dB_sizes = dB.sizes();
     const auto dC_sizes = dC.sizes();
@@ -117,7 +117,7 @@ inline void checkCublasStatus(cublasStatus_t status) {
     }
 }
 
-
+//A * B的转置 A:[batch_size,m,k] B:[batch_size,n,k]
 // void LtstridedBatchedMatrixMultiply(const at::Tensor& dA, const at::Tensor& dB, at::Tensor& dC, const float alpha, const float beta){
 //     const auto dA_sizes = dA.sizes();
 //     const auto dB_sizes = dB.sizes();
@@ -189,7 +189,7 @@ inline void checkCublasStatus(cublasStatus_t status) {
 
 // }
 
-
+//A * B A:[batch_size,m,k] B:[batch_size,k,n]
 void LtstridedBatchedMatrixMultiply(const at::Tensor& dA, const at::Tensor& dB, at::Tensor& dC, const float alpha, const float beta){
     const auto dA_sizes = dA.sizes();
     const auto dB_sizes = dB.sizes();
